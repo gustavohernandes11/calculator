@@ -1,9 +1,9 @@
 import './index.css'
 import React from 'react'
-import Home from '../../pages/home'
+import Sobre from '../../pages/sobre'
 import Contato from '../../pages/contato'
-import Projects from '../../pages/projects'
-import Anotacoes from '../../pages/anotações'
+import Projetos from '../../pages/projetos'
+import Tecnologias from '../../pages/tecnologias'
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 import { Link } from 'react-router-dom'
 
@@ -12,16 +12,16 @@ export function Nav() {
   <nav className='nav'>
     <ul>
       <li>
-        <Link to="/home">Home</Link>
+        <Link to="/sobre">Sobre</Link>
       </li>
       <li>
-        <Link to="/projects">Projetos</Link>
+        <Link to="/projetos">Projetos</Link>
       </li>
       <li>
         <Link to="/contato">Contato</Link>
       </li>
       <li>
-        <Link to="/anotacoes">Anotações</Link>
+        <Link to="/tecnologias">Tecnologias</Link>
       </li>
     </ul>
   </nav>
@@ -31,19 +31,18 @@ export function Nav() {
 export default function ContentDiv() {
   return (
     <Router>
-
     <Nav/>
     <Switch>
 
-        <Route path="/home">
+        <Route path="/sobre">
           <div className="contentdiv">
-            <Home />
+            <Sobre />
           </div>
         </Route>
-        <Route path="/projects">
+        <Route path="/projetos">
           <div className="contentdiv">
 
-            <Projects />
+            <Projetos />
           </div>
         </Route>
         <Route path="/contato">
@@ -52,12 +51,15 @@ export default function ContentDiv() {
             <Contato />
           </div>
         </Route>
-        <Route path="/anotacoes">
-          <div className="contentdiv">
-
-            <Anotacoes />
+        <Route path="/tecnologias">
+      <div className="contentdiv">
+            <Tecnologias />
           </div>
-        </Route>
+      </Route><Route path="/">
+      <div className="contentdiv">
+            <Sobre />
+          </div>
+      </Route>
     </Switch>
     </Router>
   )
