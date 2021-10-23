@@ -3,39 +3,11 @@ html, body, #root{
   width: 100%;
   height: 100%;
   overflow: hidden;
-}
-
-
-.contentcontainer {
-  grid-area: contentcontainer;
-  overflow-y: scroll;
-}
-
-.topline {
-  background-color: black;
-  grid-area: topline;
-  height: 3px;
-}
-
-
-.app {
-  width: 100%;
-  height: 100%;
-  display: grid;
-  background-color: rgb(247, 247, 247);
-
-  grid-template-columns: 2fr 6fr;
-  grid-template-rows:  1fr 100px;
-  grid-template-areas:'sidebar nav'
-                      'sidebar contentcontainer' 
-                      'sidebar contentcontainer'
-                      
-}
-
-.verticalcontainer{
   display: flex;
-  align-items: center;
   justify-content: center;
-  flex-direction: column;
+  align-items: center;
+
+  background-color: rgb(51, 51, 51);
 }
+
 
