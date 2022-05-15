@@ -8,11 +8,14 @@ export default function Calculator() {
     const [lastValue, setLastValue] = useState(' ');
 
 
-    const buttons = ['AC', 'Del', '%', '/', '7', '8', '9', '*', '4', '5', '6', '-', '1', '2', '3', '+', '0', '.', '+/-', '=']
+    const buttons = ['AC', 'Del', '%', '/', '7', '8', '9', '*', '4', '5', '6', '-', '1', '2', '3', '+', '0', '.', '=']
 
     function handleTouche(buttonPressed) {
+        if (currentValue === 'error' || currentValue === 'undefined') {
+            setCurrentValue('')
+        }
 
-        if (buttonPressed === '-' || buttonPressed === '+' || buttonPressed === '/' || buttonPressed === '*') {
+        if (buttonPressed === '-' || buttonPressed === '+' || buttonPressed === '/' || buttonPressed === '*' || buttonPressed === '%') {
             setCurrentValue(currentValue + " " + buttonPressed + " ")
             return
         }
@@ -44,20 +47,28 @@ export default function Calculator() {
 
         }
 
+        // Implementar
         if (buttonPressed === '+/-') {
 
             return
         }
-
+        
         if (buttonPressed === '%') {
 
             return
         }
 
+        //
+
         if (buttonPressed === '=') {
             setLastValue(currentValue + ' = ')
-            setCurrentValue(evaluate(currentValue))
-            return
+            try {
+                setCurrentValue(evaluate(currentValue));
+                return
+            } catch(e) {
+                setCurrentValue('error');
+                return
+            }
 
         } else {
             setCurrentValue(currentValue + buttonPressed)
