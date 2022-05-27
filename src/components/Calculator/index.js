@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import './index.css';
 
+// eslint-disable-next-line no-unused-vars
 const { evaluate, default: math } = require('mathjs');
 
 export default function Calculator() {
@@ -42,24 +43,7 @@ export default function Calculator() {
                 setCurrentValue(' ')
                 return
             }
-
-
-
         }
-
-        // Implementar
-        if (buttonPressed === '+/-') {
-
-            return
-        }
-        
-        if (buttonPressed === '%') {
-
-            return
-        }
-
-        //
-
         if (buttonPressed === '=') {
             setLastValue(currentValue + ' = ')
             try {
